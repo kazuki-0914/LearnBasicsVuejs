@@ -12,17 +12,8 @@
   <div id="app">
   <!-- #app農地泡にVuejsのコードを実装する -->
   <p>{{ message }}</p>
-  <ol><li v-for="item in list">{{ item }}</li></ol>
-  <button v-on:click="handleClick">Click</button>
-  <input type="text" v-model="message">
-  <!-- v-model.numberで数値として扱うことも可能 -->
-  <!-- <input type="text" v-model.number="count"> -->
-  <p v-if="show">Hello Vue.js!</p>
-  <button v-on:click="show2=!show2">切り替え</button>
-  <transition>
-    <p v-if="show2">Hello2 Vue.js!</p>
-  </transition>
-  <pre>{{ $data }}</pre>
+  <div v-bind:text-content.prop="message"></div>
+  <input type="text" v-bind:value.sync="message">
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script src="main.js"></script>

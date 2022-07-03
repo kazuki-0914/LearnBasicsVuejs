@@ -1,0 +1,45 @@
+<!-- テキストのバインディング -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js App</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="app">
+  <!-- #app 内にVuejsのコードを実装する -->
+    <ul>
+      <li v-for="item in list" v-bind:key="item.id">
+        ID.{{ item.id }} {{ item.name}} HP.{{item.hp}}
+      </li>
+    </ul>
+    <hr>
+    <ul>
+      <li v-for="(item, index) in list" >
+        ID.{{ item.id }} {{ item.name}} HP.{{item.hp}} index:{{index}}
+      </li>
+    </ul>
+    <hr>
+    <ul>
+      <li v-for="(item, key,index) in list" >
+        ID.{{ item.id }} {{ item.name}} HP.{{item.hp}} index:{{index}} key:{{key}}
+      </li>
+    </ul>
+    <hr>
+    <ul>
+      <li v-for="item in list" v-bind:key="item.id" v-bind:class="{tuyoi: item.hp>300}">
+        ID.{{ item.id }} {{ item.name}} HP.{{item.hp}}
+        <span v-if="item.hp >300">つよい！</span>
+        <!-- 何件ヒットしました！は算出プロパティ -->
+      </li>
+    </ul>
+    <button v-on:click="add">モンスター追加</button>
+  <!-- #app 内にVuejsのコードを実装する -->
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

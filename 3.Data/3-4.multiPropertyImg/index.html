@@ -1,0 +1,26 @@
+<!-- テキストのバインディング -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js App</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="app">
+  <!-- #app 内にVuejsのコードを実装する -->
+    <img src="gojyo.jpg" alt="五条悟">
+    <img v-bind:src="item.src"
+    v-bind:alt="item.alt"
+    v-bind:width="item.width"
+    v-bind:height="item.height">
+    <img v-bind="item">
+    <img v-bind="item" v-bind:id="'thumb-'+item.id">
+  <!-- #app 内にVuejsのコードを実装する -->
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
